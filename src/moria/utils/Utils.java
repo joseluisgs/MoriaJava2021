@@ -13,7 +13,7 @@ public class Utils {
      * @param max máximo permitido
      * @return true/false si se cumple que el valor está dentro del límite
      */
-    public final boolean probabilidad(int limite, int max) {
+    public static boolean probabilidad(int limite, int max) {
         int sorteo = new Random().nextInt(max);
         return sorteo <= limite;
     }
