@@ -18,7 +18,7 @@ public final class Anillo extends Objeto {
      * Devuelve Si está puesto
      * @return true/false
      */
-    public final boolean getPuesto() {
+    public boolean getPuesto() {
         return this.puesto;
     }
 
@@ -26,7 +26,7 @@ public final class Anillo extends Objeto {
      * Indica si esta puesto
      * @param puesto true/false
      */
-    public final void setPuesto(boolean puesto) {
+    public void setPuesto(boolean puesto) {
         this.puesto = puesto;
     }
 }
