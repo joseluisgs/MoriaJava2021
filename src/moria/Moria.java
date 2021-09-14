@@ -31,12 +31,12 @@ public final class Moria {
 
     // No es necesario fijar los valores aquí si usamos el Build, porque los tiene él
     // Constantes del sistema para tener parametrizado su ejecución y no mezclada en el código
-    private int MAX_ENERGIA = 30;
-    private int MAX_FLECHAS = 10;
-    private int MAX_SALAS = 36;
-    private int MAX_SALA_MALIGNO = 10;
-    private int MAX_SALA_FLECHAS = 5;
-    private int MAX_SALA_ENEMIGOS = 10;
+    private int MAX_ENERGIA;
+    private int MAX_FLECHAS;
+    private int MAX_SALAS;
+    private int MAX_SALA_MALIGNO;
+    private int MAX_SALA_FLECHAS;
+    private int MAX_SALA_ENEMIGOS;
 
     // Condiciones del run
     private boolean VIVOS = true;
@@ -56,6 +56,55 @@ public final class Moria {
     private Sala salaActual;
     private boolean estado = VIVOS;
 
+    // Sets para Builder
+
+    /**
+     * Establece el numero de salas
+     * @param numSalas
+     */
+    public void setTotalSalas(int numSalas) {
+        this.MAX_SALAS = numSalas;
+    }
+
+    /**
+     * establece la energía inicial de la vara
+     * @param energia
+     */
+    public void setEnergiaInicialVara(int energia) {
+        this.MAX_ENERGIA = energia;
+    }
+
+    /**
+     * Establece la cantidad de flechas iniciales del carcaj
+     * @param flechas
+     */
+   public void setFlechasInicialCarcaj(int flechas) {
+        this.MAX_FLECHAS = flechas;
+    }
+
+    /**
+     * establece el poder maligno de la sala
+     * @param poder
+     */
+    public void setPoderMaligoSala(int poder) {
+        this.MAX_SALA_MALIGNO = poder;
+    }
+
+    /**
+     * Establece en número de flechas por sala
+     * @param flechas
+     */
+   public void setFlechasSala(int flechas) {
+        this.MAX_SALA_FLECHAS = flechas;
+    }
+
+    /**
+     * Establece el número de enemigos pro sala
+     * @param enemigos
+     */
+    public void setEnemigosSala(int enemigos) {
+        this.MAX_SALA_ENEMIGOS = enemigos;
+    }
 
     @Override
     public String toString() {
