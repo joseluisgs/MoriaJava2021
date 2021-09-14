@@ -1,14 +1,14 @@
 package peligros;
 
 /**
- * Clase del Peligro Accion
+ * Clase del Peligro Acción
  */
 public final class Accion extends Peligro {
     private int flechas;
     private int enemigos;
 
     /**
-     * Construcctor del Peligro Acción
+     * Constructor del Peligro Acción
      * @param flechas Flechas necesarias
      * @param enemigos Enemigos existentes
      */
