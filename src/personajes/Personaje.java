@@ -91,6 +91,10 @@ public abstract class Personaje {
         return this.objeto;
     }
 
+    /**
+     * Establece el objeto a portar
+     * @param objeto objeto a portar
+     */
     public void setObjeto(Objeto objeto) {
         this.objeto = objeto;
     }
