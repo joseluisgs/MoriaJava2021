@@ -8,6 +8,7 @@ public final class Vara extends Objeto {
 
     /**
      * Constructor de Vara
+     *
      * @param energia Energía de la vara
      */
     public Vara(int energia) {
@@ -17,6 +18,7 @@ public final class Vara extends Objeto {
 
     /**
      * Obtiene la energía de la vara
+     *
      * @return energía
      */
     public int getEnergia() {
@@ -25,6 +27,7 @@ public final class Vara extends Objeto {
 
     /**
      * Establece el valor de la energía de l avara
+     *
      * @param energia valor de energía
      */
     public void setEnergia(int energia) {

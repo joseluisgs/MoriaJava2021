@@ -1,6 +1,6 @@
 package moria;
 
-public class MoriaBuilder implements IBuilder{
+public class MoriaBuilder implements IBuilder {
     // Parámetros por defecto para el Builder si queremos
     private int energiaVara = 30;
     private int flechasCarcaj = 10;
@@ -15,6 +15,7 @@ public class MoriaBuilder implements IBuilder{
 
     /**
      * Establece el poder inicial de la Vara
+     *
      * @param energiaVara
      * @return
      */
@@ -25,6 +26,7 @@ public class MoriaBuilder implements IBuilder{
 
     /**
      * Establece el valor inicial de las flechas
+     *
      * @param flechasCarcaj
      * @return
      */
@@ -35,6 +37,7 @@ public class MoriaBuilder implements IBuilder{
 
     /**
      * Establece el total de salas
+     *
      * @param numSalas
      * @return
      */
@@ -45,6 +48,7 @@ public class MoriaBuilder implements IBuilder{
 
     /**
      * Establece el poder maximo maligno por sala
+     *
      * @param maxMaligno
      * @return
      */
@@ -55,6 +59,7 @@ public class MoriaBuilder implements IBuilder{
 
     /**
      * Establece la cantidad maxima de flechas po sala
+     *
      * @param maxFlechas
      * @return
      */
@@ -65,6 +70,7 @@ public class MoriaBuilder implements IBuilder{
 
     /**
      * Establece el número máximo de enemigos por sala
+     *
      * @param maxEnemigos
      * @return
      */
@@ -75,6 +81,7 @@ public class MoriaBuilder implements IBuilder{
 
     /**
      * Método Build
+     *
      * @return Instancia de Moria Parametrizada
      */
     @Override

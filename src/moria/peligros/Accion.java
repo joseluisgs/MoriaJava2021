@@ -9,7 +9,8 @@ public final class Accion extends Peligro {
 
     /**
      * Constructor del Peligro Acción
-     * @param flechas Flechas necesarias
+     *
+     * @param flechas  Flechas necesarias
      * @param enemigos Enemigos existentes
      */
     public Accion(int flechas, int enemigos) {
@@ -20,6 +21,7 @@ public final class Accion extends Peligro {
 
     /**
      * Obtiene las flechas
+     *
      * @return numero de flechas
      */
     public int getFlechas() {
@@ -28,6 +30,7 @@ public final class Accion extends Peligro {
 
     /**
      * Establece el número de flechas
+     *
      * @param flechas número de flechas
      */
     public void setFlechas(int flechas) {
@@ -36,6 +39,7 @@ public final class Accion extends Peligro {
 
     /**
      * Obtiene los enemigos
+     *
      * @return número de enemigos
      */
     public int getEnemigos() {
@@ -44,6 +48,7 @@ public final class Accion extends Peligro {
 
     /**
      * Establece el número de enemigos
+     *
      * @param enemigos número de enemigos
      */
     public void setEnemigos(int enemigos) {

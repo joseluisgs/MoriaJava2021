@@ -8,6 +8,7 @@ public final class Carcaj extends Objeto {
 
     /**
      * Constructor de carcaj
+     *
      * @param cantidad Número de Flechas iniciales
      */
     public Carcaj(int cantidad) {
@@ -17,6 +18,7 @@ public final class Carcaj extends Objeto {
 
     /**
      * Devuelve la cantidad de flechas que tiene el carcaj
+     *
      * @return cantidad de flechas
      */
     public int getCantidad() {
@@ -25,6 +27,7 @@ public final class Carcaj extends Objeto {
 
     /**
      * Establece la cantidad de flechas del carcaj
+     *
      * @param cantidad cantidad de flechas
      */
     public void setCantidad(int cantidad) {

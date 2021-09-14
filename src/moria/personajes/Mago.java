@@ -1,11 +1,11 @@
 package moria.personajes;
 
-import moria.utils.Utils;
 import moria.objetos.Objeto;
 import moria.objetos.Vara;
 import moria.peligros.Magico;
 import moria.peligros.Peligro;
 import moria.personajes.personalidad.SoyMago;
+import moria.utils.Utils;
 
 import java.util.Random;
 
@@ -25,6 +25,7 @@ public final class Mago extends Personaje implements SoyMago {
 
     /**
      * Recarga la vara con energía
+     *
      * @param energia energía de la vara
      */
     public void recargarVara(int energia) {
@@ -34,14 +35,16 @@ public final class Mago extends Personaje implements SoyMago {
 
     /**
      * Nos indica el poder de la vara
+     *
      * @return poder de la vara
      */
     public int poderVara() {
-        return ((Vara)this.objeto).getEnergia();
+        return ((Vara) this.objeto).getEnergia();
     }
 
     /**
      * Si ha ganado o superado su reto
+     *
      * @param limite limite de probabilidad
      * @return true o false
      */
@@ -58,6 +61,7 @@ public final class Mago extends Personaje implements SoyMago {
 
     /**
      * Método de acción ante el peligro
+     *
      * @param peligro peligro sobre el que actuar
      * @return true o false si lo superamos
      */
@@ -67,10 +71,10 @@ public final class Mago extends Personaje implements SoyMago {
         System.out.println("--> " + this.getNombre() + " recarga la vara");
         this.recargarVara(new Random().nextInt(10));
         // Si el poder es mayor
-        if (this.poderVara() > ((Magico)peligro).getPoder()) {
+        if (this.poderVara() > ((Magico) peligro).getPoder()) {
             System.out.println("--> la vara es más poderosa que el peligro :)");
             return this.peligroSuperado();
-        } else if (this.poderVara() == ((Magico)peligro).getPoder()) {
+        } else if (this.poderVara() == ((Magico) peligro).getPoder()) {
             // Si es igual ganamos en el 60%
             System.out.println("--> la vara es tan poderosa como el peligro :|");
             return this.ganar(60);

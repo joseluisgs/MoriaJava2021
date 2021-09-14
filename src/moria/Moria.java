@@ -18,17 +18,12 @@ public final class Moria {
 
     // implementamos el Singleton
     private static Moria instance = null;
-    // Hacemos el constructor privado
-    private Moria(){}
-
-    // Lanzamos la petición de instancia
-    public static Moria getInstance() {
-        if (instance==null) {
-            instance=new Moria();
-        }
-        return instance;
-    }
-
+    // Condiciones del run
+    private final boolean VIVOS = true;
+    private final boolean MUERTOS = false;
+    // Lista de salas. Usamos esta clase propia que implementa este comportamiento
+    private final Cola<Sala> salas = new Cola<Sala>();
+    private final boolean estado = VIVOS;
     // No es necesario fijar los valores aquí si usamos el Build, porque los tiene él
     // Constantes del sistema para tener parametrizado su ejecución y no mezclada en el código
     private int MAX_ENERGIA;
@@ -37,29 +32,32 @@ public final class Moria {
     private int MAX_SALA_MALIGNO;
     private int MAX_SALA_FLECHAS;
     private int MAX_SALA_ENEMIGOS;
-
-    // Condiciones del run
-    private boolean VIVOS = true;
-    private boolean MUERTOS = false;
-
     // Personajes, son abstract y luego los iniciamos con el tipo concreto (polimorfismo)
     // es una forma simplificada y reducida de apliacar una factoria
     // https://refactoring.guru/es/design-patterns/factory-method
     private Personaje gandalf;
     private Personaje legolas;
     private Personaje frodo;
-
-    // Lista de salas. Usamos esta clase propia que implementa este comportamiento
-    private Cola<Sala> salas = new Cola<Sala>();
-
     // Variables de ejecución
     private Sala salaActual;
-    private boolean estado = VIVOS;
+
+    // Hacemos el constructor privado
+    private Moria() {
+    }
+
+    // Lanzamos la petición de instancia
+    public static Moria getInstance() {
+        if (instance == null) {
+            instance = new Moria();
+        }
+        return instance;
+    }
 
     // Sets para Builder
 
     /**
      * Establece el numero de salas
+     *
      * @param numSalas
      */
     public void setTotalSalas(int numSalas) {
@@ -68,6 +66,7 @@ public final class Moria {
 
     /**
      * establece la energía inicial de la vara
+     *
      * @param energia
      */
     public void setEnergiaInicialVara(int energia) {
@@ -76,14 +75,16 @@ public final class Moria {
 
     /**
      * Establece la cantidad de flechas iniciales del carcaj
+     *
      * @param flechas
      */
-   public void setFlechasInicialCarcaj(int flechas) {
+    public void setFlechasInicialCarcaj(int flechas) {
         this.MAX_FLECHAS = flechas;
     }
 
     /**
      * establece el poder maligno de la sala
+     *
      * @param poder
      */
     public void setPoderMaligoSala(int poder) {
@@ -92,14 +93,16 @@ public final class Moria {
 
     /**
      * Establece en número de flechas por sala
+     *
      * @param flechas
      */
-   public void setFlechasSala(int flechas) {
+    public void setFlechasSala(int flechas) {
         this.MAX_SALA_FLECHAS = flechas;
     }
 
     /**
      * Establece el número de enemigos pro sala
+     *
      * @param enemigos
      */
     public void setEnemigosSala(int enemigos) {

@@ -72,16 +72,18 @@ public final class Elfo extends Personaje implements SoyElfo {
 
     /**
      * Elimina a los enemigos de la sala con disparos
+     *
      * @param disparos Número de disparos a realizar
      */
     private void matarEnemigos(int disparos) {
-        for (int i = 0; i < disparos ; i++) {
+        for (int i = 0; i < disparos; i++) {
             this.lanzarFlecha();
         }
     }
 
     /**
      * Recoge flechas de la sala y las carga en el Carcaj
+     *
      * @param flechas cantidad de flechas recogidas
      */
     private void recogerFlechas(int flechas) {

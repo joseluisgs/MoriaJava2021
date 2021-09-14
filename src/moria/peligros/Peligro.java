@@ -8,6 +8,7 @@ public abstract class Peligro {
 
     /**
      * Constructor
+     *
      * @param tipo Tipo de Peligro
      */
     public Peligro(String tipo) {
@@ -16,6 +17,7 @@ public abstract class Peligro {
 
     /**
      * Obtiene el tipo de Peligro
+     *
      * @return Tipo de Peligro
      */
     public String getTipo() {

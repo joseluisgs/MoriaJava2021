@@ -1,10 +1,10 @@
 package moria.personajes;
 
-import moria.utils.Utils;
 import moria.objetos.Anillo;
 import moria.objetos.Objeto;
 import moria.peligros.Peligro;
 import moria.personajes.personalidad.SoyHobbit;
+import moria.utils.Utils;
 
 /**
  * Clase de Personaje Hobbit
@@ -28,7 +28,7 @@ public final class Hobbit extends Personaje implements SoyHobbit {
      */
     public void ponerseAnillo() {
         System.out.println("--> " + this.getNombre() + " Me pongo el anillo");
-        ((Anillo)this.objeto).setPuesto(true);
+        ((Anillo) this.objeto).setPuesto(true);
     }
 
     /**
@@ -36,11 +36,12 @@ public final class Hobbit extends Personaje implements SoyHobbit {
      */
     public void quitarseAnillo() {
         System.out.println("--> " + this.getNombre() + " Me pongo el anillo");
-        ((Anillo)this.objeto).setPuesto(false);
+        ((Anillo) this.objeto).setPuesto(false);
     }
 
     /**
      * Decidir si se pone o se quita el anillo
+     *
      * @return true false es la decisión de ponerse el anillo
      */
     private boolean decidir() {
@@ -50,6 +51,7 @@ public final class Hobbit extends Personaje implements SoyHobbit {
 
     /**
      * Supera el peligro de Habilidad
+     *
      * @param limite limite de la probabilidad
      * @return true o false si lo supera
      */
@@ -66,6 +68,7 @@ public final class Hobbit extends Personaje implements SoyHobbit {
 
     /**
      * Método de acción ante el peligro
+     *
      * @param peligro peligro sobre el que actuar
      * @return true o false si lo superamos
      */
@@ -77,7 +80,7 @@ public final class Hobbit extends Personaje implements SoyHobbit {
             System.out.println("--> " + this.getNombre() + " decide no ponerse el anillo");
             this.ponerseAnillo();
             // Lo superamos el 90%
-           return this.superarPeligroHabilidad(90);
+            return this.superarPeligroHabilidad(90);
         } else {
             System.out.println("--> " + this.getNombre() + " decide no ponerse el anillo");
             // Solo lo superamos en el 20% de los casos

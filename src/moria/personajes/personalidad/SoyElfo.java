@@ -11,6 +11,7 @@ public interface SoyElfo {
 
     /**
      * Recarga el Carcaj con un valor
+     *
      * @param flechas número de flechas con la que recargo el carcaj
      */
     void recargarCarcaj(int flechas);

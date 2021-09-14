@@ -8,6 +8,7 @@ public final class Magico extends Peligro {
 
     /**
      * Constructor del peligro Mágico
+     *
      * @param poder poder a consumir
      */
     public Magico(int poder) {
@@ -17,6 +18,7 @@ public final class Magico extends Peligro {
 
     /**
      * Obtiene el poder
+     *
      * @return poder
      */
     public int getPoder() {
@@ -25,6 +27,7 @@ public final class Magico extends Peligro {
 
     /**
      * Establece el poder
+     *
      * @param poder cantidad de poder
      */
     public void setPoder(int poder) {

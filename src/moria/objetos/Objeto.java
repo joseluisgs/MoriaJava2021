@@ -8,6 +8,7 @@ public abstract class Objeto {
 
     /**
      * Constructor de Objeto
+     *
      * @param tipo Tipo de Objeto
      */
     public Objeto(String tipo) {
@@ -16,6 +17,7 @@ public abstract class Objeto {
 
     /**
      * Devuleve el tipo del objeto
+     *
      * @return tipo
      */
     public final String getTipo() {
