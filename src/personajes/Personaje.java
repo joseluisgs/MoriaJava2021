@@ -11,7 +11,7 @@ public abstract class Personaje {
     private final int probHuir;
     private final String nombre;
     private boolean vivo;
-    private Objeto objeto;
+    protected Objeto objeto;
 
     /**
      * Constructor de Personaje
