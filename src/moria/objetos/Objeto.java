@@ -1,7 +1,7 @@
-package objetos;
+package moria.objetos;
 
 /**
- * Clase abstracta para los tipos de objetos
+ * Clase abstracta para los tipos de moria.objetos
  */
 public abstract class Objeto {
     private final String tipo;

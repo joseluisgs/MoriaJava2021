@@ -1,4 +1,4 @@
-package personajes.personalidad;
+package moria.personajes.personalidad;
 
 /**
  * Interfaz de Personalidad de Mago

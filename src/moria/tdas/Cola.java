@@ -1,4 +1,4 @@
-package tdas;
+package moria.tdas;
 
 import java.util.ArrayDeque;
 

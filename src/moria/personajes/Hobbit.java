@@ -1,10 +1,10 @@
-package personajes;
+package moria.personajes;
 
 import moria.utils.Utils;
-import objetos.Anillo;
-import objetos.Objeto;
-import peligros.Peligro;
-import personajes.personalidad.SoyHobbit;
+import moria.objetos.Anillo;
+import moria.objetos.Objeto;
+import moria.peligros.Peligro;
+import moria.personajes.personalidad.SoyHobbit;
 
 /**
  * Clase de Personaje Hobbit

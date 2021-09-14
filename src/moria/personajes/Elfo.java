@@ -1,10 +1,10 @@
-package personajes;
+package moria.personajes;
 
-import objetos.Carcaj;
-import objetos.Objeto;
-import peligros.Accion;
-import peligros.Peligro;
-import personajes.personalidad.SoyElfo;
+import moria.objetos.Carcaj;
+import moria.objetos.Objeto;
+import moria.peligros.Accion;
+import moria.peligros.Peligro;
+import moria.personajes.personalidad.SoyElfo;
 
 /**
  * Clase de Personaje Elfo

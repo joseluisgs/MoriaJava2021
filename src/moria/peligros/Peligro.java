@@ -1,4 +1,4 @@
-package peligros;
+package moria.peligros;
 
 /**
  * Clase del tipo de Peligro

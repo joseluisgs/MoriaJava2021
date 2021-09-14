@@ -1,12 +1,11 @@
-package personajes;
+package moria.personajes;
 
 import moria.utils.Utils;
-import objetos.Carcaj;
-import objetos.Objeto;
-import objetos.Vara;
-import peligros.Magico;
-import peligros.Peligro;
-import personajes.personalidad.SoyMago;
+import moria.objetos.Objeto;
+import moria.objetos.Vara;
+import moria.peligros.Magico;
+import moria.peligros.Peligro;
+import moria.personajes.personalidad.SoyMago;
 
 import java.util.Random;
 

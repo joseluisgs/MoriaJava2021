@@ -1,8 +1,8 @@
-package personajes;
+package moria.personajes;
 
 import moria.utils.Utils;
-import objetos.Objeto;
-import peligros.Peligro;
+import moria.objetos.Objeto;
+import moria.peligros.Peligro;
 
 /**
  * Clase de Personaje

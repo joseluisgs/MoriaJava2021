@@ -1,6 +1,6 @@
-package salas;
+package moria.salas;
 
-import peligros.Peligro;
+import moria.peligros.Peligro;
 
 /**
  * Clase sala. La definimos como un POJO para tener sus métodos típicos usando data
