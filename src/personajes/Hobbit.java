@@ -11,7 +11,6 @@ import personajes.personalidad.SoyHobbit;
  */
 public final class Hobbit extends Personaje implements SoyHobbit {
 
-
     /**
      * Constructor de Hobbit
      *
