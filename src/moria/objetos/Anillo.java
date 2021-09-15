@@ -31,4 +31,11 @@ public final class Anillo extends Objeto {
     public void setPuesto(boolean puesto) {
         this.puesto = puesto;
     }
+
+    @Override
+    public String toString() {
+        return "Anillo{" +
+                "puesto=" + puesto +
+                '}';
+    }
 }

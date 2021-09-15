@@ -107,4 +107,14 @@ public abstract class Personaje {
     public void setObjeto(Objeto objeto) {
         this.objeto = objeto;
     }
+
+    @Override
+    public String toString() {
+        return "Personaje{" +
+                "probHuir=" + probHuir +
+                ", nombre='" + nombre + '\'' +
+                ", objeto=" + objeto.toString() +
+                ", vivo=" + vivo +
+                '}';
+    }
 }

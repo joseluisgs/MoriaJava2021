@@ -34,4 +34,10 @@ public final class Vara extends Objeto {
         this.energia = energia;
     }
 
+    @Override
+    public String toString() {
+        return "Vara{" +
+                "energia=" + energia +
+                '}';
+    }
 }

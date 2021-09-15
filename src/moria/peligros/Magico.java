@@ -33,4 +33,11 @@ public final class Magico extends Peligro {
     public void setPoder(int poder) {
         this.poder = poder;
     }
+
+    @Override
+    public String toString() {
+        return "Magico{" +
+                "poder=" + poder +
+                '}';
+    }
 }

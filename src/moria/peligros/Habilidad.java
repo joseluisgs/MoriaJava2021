@@ -11,4 +11,9 @@ public final class Habilidad extends Peligro {
     public Habilidad() {
         super("Habilidad");
     }
+
+    @Override
+    public String toString() {
+        return "Habilidad";
+    }
 }

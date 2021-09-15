@@ -23,4 +23,11 @@ public abstract class Peligro {
     public String getTipo() {
         return this.tipo;
     }
+
+    @Override
+    public String toString() {
+        return "Peligro{" +
+                "tipo='" + tipo + '\'' +
+                '}';
+    }
 }

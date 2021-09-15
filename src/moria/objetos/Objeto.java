@@ -23,4 +23,11 @@ public abstract class Objeto {
     public final String getTipo() {
         return this.tipo;
     }
+
+    @Override
+    public String toString() {
+        return "Objeto{" +
+                "tipo='" + tipo + '\'' +
+                '}';
+    }
 }

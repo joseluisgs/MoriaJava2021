@@ -27,7 +27,7 @@ public final class Sala {
     public String toString() {
         return "Sala{" +
                 "numero=" + numero +
-                ", peligro=" + peligro +
+                ", peligro=" + peligro.toString() +
                 '}';
     }
 }

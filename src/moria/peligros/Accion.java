@@ -54,4 +54,12 @@ public final class Accion extends Peligro {
     public void setEnemigos(int enemigos) {
         this.enemigos = enemigos;
     }
+
+    @Override
+    public String toString() {
+        return "Accion{" +
+                "flechas=" + flechas +
+                ", enemigos=" + enemigos +
+                '}';
+    }
 }
