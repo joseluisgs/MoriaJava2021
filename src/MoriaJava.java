@@ -14,12 +14,9 @@ public class MoriaJava {
         // https://refactoring.guru/es/design-patterns/facade
 
         MoriaBuilder builder = new MoriaBuilder();
-        Moria moria = builder.conTotalSalas(36)
-                .conEnergiaVara(30)
-                .conFlechasCarcaj(10)
+        Moria moria = builder.conTotalSalas(3999999)
                 .conMaxPoderMaligoEnSala(10)
-                .conMaxFlechasEnSala(5)
-                .conMaxEnemigosEnSala(10)
+                .conEnergiaVara(30)
                 .build();
         System.out.println(moria.toString());
         System.out.println("***");

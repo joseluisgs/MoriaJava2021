@@ -9,7 +9,7 @@ import java.util.ArrayDeque;
  *
  * @param <E> elemento de cola genérica
  */
-public class Cola<E> extends ArrayDeque<E> {
+public class Cola<E> extends ArrayDeque<E> implements ICola<E> {
 
     /**
      * Encola un elemento al final
@@ -28,4 +28,5 @@ public class Cola<E> extends ArrayDeque<E> {
     public E desencolar() {
         return this.removeFirst();
     }
+
 }

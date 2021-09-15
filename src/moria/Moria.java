@@ -3,13 +3,14 @@ package moria;
 import moria.personajes.Personaje;
 import moria.salas.Sala;
 import moria.tdas.Cola;
+import moria.tdas.ICola;
 
 /**
  * Moria es nuestra clase principal. Actúa como controlador
  * Se crea como singleton para asegurar que solo hay una instancia (opcional)
  * https://refactoring.guru/es/design-patterns/singleton
  * https://blog.mindorks.com/how-to-create-a-singleton-class-in-kotlin
- * Tambien se puede implementar como patrón builder (parámetros)
+ * También se puede implementar como patrón builder (parámetros)
  * https://refactoring.guru/es/design-patterns/builder
  * Es la fachada de nuestro problema
  * https://refactoring.guru/es/design-patterns/facade
@@ -22,7 +23,9 @@ public final class Moria {
     private final boolean VIVOS = true;
     private final boolean MUERTOS = false;
     // Lista de salas. Usamos esta clase propia que implementa este comportamiento
-    private final Cola<Sala> salas = new Cola<Sala>();
+    // Además vamos a decir que lo definimos por su comportamiento y no por su clase
+    // ES decir usamos la interfaz. Esto lo vas a ver mucho :)
+    private final ICola<Sala> salas = new Cola<Sala>();
     private final boolean estado = VIVOS;
     // No es necesario fijar los valores aquí si usamos el Build, porque los tiene él
     // Constantes del sistema para tener parametrizado su ejecución y no mezclada en el código
