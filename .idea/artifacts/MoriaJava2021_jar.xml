@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MoriaJava2021:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/MoriaJava2021_jar</output-path>
+    <root id="archive" name="MoriaJava2021.jar">
+      <element id="module-output" name="MoriaJava2021" />
+    </root>
+  </artifact>
+</component>

@@ -16,7 +16,8 @@ Debes tener en cuenta que se puede hacer de diferente manera y algunas cosas est
 * Polimorfismo
 * TDA
 * Clases POJO
-* Programación Funiconal y Streams
+* Programación Funcional y Streams
+* Generación de Jars para distribución
 * etc.
 
 ## Otros lenguajes
