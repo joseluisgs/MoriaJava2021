@@ -6,19 +6,27 @@ import moria.MoriaBuilder;
  */
 public class MoriaJava {
     public static void main(String[] args) {
-        System.out.println("BIENVENIDOS A MORIA! ***");
+        System.out.println("*** ¡BIENVENIDOS A MORIA! ***");
         System.out.println();
         // Declaramos la clase principal, usando singleton dentro del Builder y además es nuestro patron fachada
         // https://refactoring.guru/es/design-patterns/builder
         // https://refactoring.guru/es/design-patterns/singleton
         // https://refactoring.guru/es/design-patterns/facade
 
-        MoriaBuilder builder = new MoriaBuilder();
-        Moria moria = builder.conTotalSalas(3999999)
-                .conMaxPoderMaligoEnSala(10)
+        Moria moria = new MoriaBuilder()
+                .conTotalSalas(36)
                 .conEnergiaVara(30)
+                .conFlechasCarcaj(10)
+                .conMaxPoderMaligoEnSala(10)
+                .conMaxFlechasEnSala(5)
+                .conMaxEnemigosEnSala(10)
                 .build();
         System.out.println(moria.toString());
-        System.out.println("***");
+        System.out.println();
+        // Inicializamos todo el sistema (Irá dentro del Builder)
+        moria.init();
+        moria.test();
+
+        System.out.println("*** FIN ***");
     }
 }

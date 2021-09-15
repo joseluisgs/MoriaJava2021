@@ -16,6 +16,7 @@ Debes tener en cuenta que se puede hacer de diferente manera y algunas cosas est
 * Polimorfismo
 * TDA
 * Clases POJO
+* Programación Funiconal y Streams
 * etc.
 
 ## Otros lenguajes

@@ -1,9 +1,20 @@
 package moria;
 
+import moria.objetos.Anillo;
+import moria.objetos.Carcaj;
+import moria.objetos.Vara;
+import moria.peligros.Accion;
+import moria.peligros.Habilidad;
+import moria.peligros.Magico;
+import moria.personajes.Elfo;
+import moria.personajes.Hobbit;
+import moria.personajes.Mago;
 import moria.personajes.Personaje;
 import moria.salas.Sala;
 import moria.tdas.Cola;
 import moria.tdas.ICola;
+
+import java.util.Random;
 
 /**
  * Moria es nuestra clase principal. Actúa como controlador
@@ -55,6 +66,69 @@ public final class Moria {
         }
         return instance;
     }
+
+    /**
+     *  Me gusta definir las cosas en el init para evitar ensuciar el código
+     *  diferencia con constructor es que este está pensado para tareas más "cargadas" y una vez creado el objet
+     *  Le asigna los valores que queramos
+     */
+    public void init() {
+        initPersonajes();
+        initSalas();
+    }
+
+    /**
+     * Iniciamos los personajes
+     */
+    private void initPersonajes() {
+        // Como vemos estamos realizando una inyección de dependencias usando agregaciones con objetos abstracts para objeto
+        // de nuevo aplicamos polimorfismo en nuestro intento de hacer una factoría de manera reducida
+        // Además aplicamos inyección de dependencias para no acoplar el tipo de objetos
+        // https://www.arquitecturajava.com/el-patron-de-inyeccion-de-dependencia/
+        gandalf = new Mago("Gandalf", true, new Vara(MAX_ENERGIA), 80);
+        legolas = new Elfo("Legolas", true, new Carcaj(MAX_FLECHAS), 80);
+        frodo = new Hobbit("Frodo", true, new Anillo(), 80);
+    }
+
+    /**
+     * Iniciamos las salas
+     */
+    private void initSalas() {
+        // Como es Fifo añadimos siempre al final. De nuevo inyectamos la dependencia del peligro
+        for (int i = 1; i<=MAX_SALAS; i++) {
+            switch (new Random().nextInt(4)) {
+                case 0: salas.encolar(new Sala(i, new Magico(new Random().nextInt(MAX_SALA_MALIGNO)+1)));
+                case 1: salas.encolar(new Sala(i, new Accion(new Random().nextInt(MAX_SALA_FLECHAS)+1, new Random().nextInt(MAX_SALA_ENEMIGOS)+1)));
+                case 3: salas.encolar(new Sala(i, new Habilidad()));
+            }
+        }
+    }
+
+    /**
+     * Función de test
+     */
+    public void test() {
+        // Probamos los personajes
+        System.out.println("Personajes");
+        System.out.println(gandalf.toString());
+        System.out.println(legolas.toString());
+        System.out.println(frodo.toString());
+
+        System.out.println("Salas");
+        // Forma for each estructurada
+//        for(Sala s: salas ) {
+//            System.out.println(s.toString());
+//        }
+        // Forma usando programación funcional
+        // https://santanderglobaltech.com/programacion-en-java-stream-para-dummies/
+        // https://windoctor7.github.io/API-Stream-Java8.html
+        // https://stackify.com/streams-guide-java-8/
+        // https://www.adictosaltrabajo.com/2016/06/23/uso-basico-de-java-8-stream-y-lambdas/
+        salas.forEach(s -> {
+            System.out.println(s.toString());
+        });
+    }
+
 
     // Sets para Builder
 
