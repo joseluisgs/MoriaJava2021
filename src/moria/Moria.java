@@ -13,8 +13,20 @@ import moria.personajes.Personaje;
 import moria.salas.Sala;
 import moria.tdas.Cola;
 import moria.tdas.ICola;
+import moria.utils.Utils;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Random;
+
 
 /**
  * Moria es nuestra clase principal. Actúa como controlador
@@ -37,7 +49,7 @@ public final class Moria {
     // Además vamos a decir que lo definimos por su comportamiento y no por su clase
     // ES decir usamos la interfaz. Esto lo vas a ver mucho :)
     private final ICola<Sala> salas = new Cola<Sala>();
-    private final boolean estado = VIVOS;
+    private boolean estado = VIVOS;
     // No es necesario fijar los valores aquí si usamos el Build, porque los tiene él
     // Constantes del sistema para tener parametrizado su ejecución y no mezclada en el código
     private int MAX_ENERGIA;
@@ -47,13 +59,15 @@ public final class Moria {
     private int MAX_SALA_FLECHAS;
     private int MAX_SALA_ENEMIGOS;
     // Personajes, son abstract y luego los iniciamos con el tipo concreto (polimorfismo)
-    // es una forma simplificada y reducida de apliacar una factoria
+    // es una forma simplificada y reducida de aplicar una factoría
     // https://refactoring.guru/es/design-patterns/factory-method
     private Personaje gandalf;
     private Personaje legolas;
     private Personaje frodo;
     // Variables de ejecución
     private Sala salaActual;
+    // Fichero y su path
+    private String FILE_REPORT = "moria.txt";
 
     // Hacemos el constructor privado
     private Moria() {
@@ -96,13 +110,103 @@ public final class Moria {
     private void initSalas() {
         // Como es Fifo añadimos siempre al final. De nuevo inyectamos la dependencia del peligro
         for (int i = 1; i<=MAX_SALAS; i++) {
-            switch (new Random().nextInt(4)) {
-                case 0: salas.encolar(new Sala(i, new Magico(new Random().nextInt(MAX_SALA_MALIGNO)+1)));
-                case 1: salas.encolar(new Sala(i, new Accion(new Random().nextInt(MAX_SALA_FLECHAS)+1, new Random().nextInt(MAX_SALA_ENEMIGOS)+1)));
-                case 3: salas.encolar(new Sala(i, new Habilidad()));
+            switch (new Random().nextInt(3)) {
+                case 0:
+                    salas.encolar(new Sala(i, new Magico(new Random().nextInt(MAX_SALA_MALIGNO)+1)));
+                    break;
+                case 1:
+                    salas.encolar(new Sala(i, new Accion(new Random().nextInt(MAX_SALA_FLECHAS)+1, new Random().nextInt(MAX_SALA_ENEMIGOS)+1)));
+                    break;
+                case 2:
+                    salas.encolar(new Sala(i, new Habilidad()));
+                    break;
             }
         }
     }
+
+    /**
+     * Método principal de ejecución
+     */
+    public void run() {
+        // Presentamos
+        presentacion();
+
+        // Nos movemos por la sala
+        while(this.salas.size() >= 1 && this.estado == this.VIVOS) {
+            this.entrarSala();
+            this.estado = this.analizarActuar();
+        }
+
+        // Imprimimos el informe
+        informe();
+    }
+
+    /**
+     * Mensajes de presentación y entradas en el fichero de historias de ejecución
+     */
+    private void presentacion() {
+        LocalDateTime dateTime = LocalDateTime.now();
+        String momento = dateTime.format(DateTimeFormatter.ofPattern("dd/M/y H:m:ss"));
+        String mensaje = "*** ABRIENDO LAS PUERTAS DE MORIA ***";
+        System.out.println(mensaje);
+        System.out.println();
+        // Escribimos en el fichero
+        añadirInforme(mensaje + " -> " + momento + '\n');
+    }
+
+    /**
+     * Escribe el informe
+     * @param texto texto del informe
+     */
+    private void añadirInforme(String texto) {
+        Utils.escribirFichero(FILE_REPORT, texto);
+    }
+
+    /**
+     * Desencolamos una sala de la lista
+     */
+    private void entrarSala() {
+        this.salaActual = this.salas.desencolar();
+        System.out.println("*** Entrando en la sala nº: " +this.salaActual.getNumero()+". Es del tipo: "+this.salaActual.getPeligro().getTipo());
+    }
+    /**
+     * Analiza la sala e indica quién debe actuar
+     * @return Boolean True si continuar, false si hemos caído en la sala
+     */
+    private boolean analizarActuar() {
+        // Dependiendo del peligro, así se actuará
+        if(this.salaActual.getPeligro() instanceof Magico) {
+            return gandalf.accion(this.salaActual.getPeligro());
+        } else if(this.salaActual.getPeligro() instanceof Accion) {
+            return legolas.accion(this.salaActual.getPeligro());
+        } else if(this.salaActual.getPeligro() instanceof Habilidad) {
+            return frodo.accion(this.salaActual.getPeligro());
+        } else {
+            return MUERTOS;
+        }
+    }
+
+
+    /**
+     * Informe final en pantalla y en el fichero de historias de ejecución
+     */
+    private void informe() {
+        LocalDateTime dateTime = LocalDateTime.now();
+        String momento = dateTime.format(DateTimeFormatter.ofPattern("dd/M/y H:m:ss"));
+        String mensaje = "--------------";
+        System.out.println(mensaje);
+        if (this.estado == this.VIVOS) {
+            mensaje = "--> NUESTROS HEROES HAN SUPERADO LOS PELIGROS DE MORIA :)\n";
+            mensaje = mensaje + "--> NUEVOS PELIGROS LES AGUARDAN EN EL FUTURO :)\n";
+        } else {
+            mensaje = "--> NUESTROS HEROES HAN CAÍDO EN MORIA :__(\n";
+            mensaje += "--> NO HAN PODIDO PASAR DE LA SALA: " + this.salaActual.getNumero() +"\n";
+        }
+        mensaje = mensaje + "*** CERRANDO LAS PUERTAS DE MORIA ***";
+        System.out.println(mensaje);
+        añadirInforme(mensaje + " -> " + momento + "\n\n");
+    }
+
 
     /**
      * Función de test
@@ -127,6 +231,11 @@ public final class Moria {
         salas.forEach(s -> {
             System.out.println(s.toString());
         });
+        // Jugando con la API STREAM y Funcional
+        System.out.println("Resumen");
+        System.out.println("Numero de salas de peligro mágico: " +  salas.stream().filter(s -> s.getPeligro() instanceof Magico).count());
+        System.out.println("Numero de salas de peligro acción: " +  salas.stream().filter(s -> s.getPeligro() instanceof Accion).count());
+        System.out.println("Numero de salas de peligro habilidad: " +  salas.stream().filter(s -> s.getPeligro() instanceof Habilidad).count());
     }
 
 

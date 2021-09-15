@@ -23,10 +23,11 @@ public class MoriaJava {
                 .build();
         System.out.println(moria.toString());
         System.out.println();
-        // Inicializamos todo el sistema (Irá dentro del Builder)
+        // Inicializamos el sistema (Irá dentro del Builder)
         moria.init();
-        moria.test();
-
+        //moria.test();
+        // Ejecutamos
+        moria.run();
         System.out.println("*** FIN ***");
     }
 }
