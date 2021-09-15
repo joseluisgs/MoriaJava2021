@@ -7,7 +7,8 @@
 ![GitHub](https://img.shields.io/github/last-commit/joseluisgs/moriaJava2021)
 
 ## Descripción
-Se ha implementado el problema de una de las muchas formas posibles y además aplicando distintas técnicas con Kotlin.
+Se ha implementado el problema de una de las muchas formas posibles y además aplicando distintas técnicas de programación 
+usando el lenguaje Java.
 Debes tener en cuenta que se puede hacer de diferente manera y algunas cosas están realizadas así para que didácticamente te pueda mostrar algo:
 * Patrones
 * Inyección de dependencias
@@ -16,6 +17,12 @@ Debes tener en cuenta que se puede hacer de diferente manera y algunas cosas est
 * TDA
 * Clases POJO
 * etc.
+
+## Otros lenguajes
+Distintas versiones del proyecto en otros lenguajes: Kotlin, JavaScript, etc. Puedes encontrar cada una de ellas en [mi repositorio de 
+GitHub](https://github.com/joseluisgs?tab=repositories&q=moria) y con ellas poder comprar y ver como se aplican las mismas técnicas en cada uno de los lenguajes. 
+
+
 ## Autor
 
 Codificado con :sparkling_heart: por [José Luis González Sánchez](https://twitter.com/joseluisgonsan)
