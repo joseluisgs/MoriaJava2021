@@ -29,6 +29,7 @@ public class Utils {
      * Usamos la clase Files de la nueva NIO2 de Java
      * https://www.arold.es/java-nio2-ejemplos/
      * https://docs.oracle.com/javase/7/docs/api/java/nio/file/Files.html
+     *
      * @param nombreFichero
      * @param texto
      */
@@ -38,7 +39,7 @@ public class Utils {
             Files.write(Paths.get(nombreFichero), texto.getBytes(StandardCharsets.UTF_8),
                     StandardOpenOption.CREATE, StandardOpenOption.APPEND);
         } catch (IOException e) {
-            System.err.println("Error al escribir fichero: " +e.getMessage());
+            System.err.println("Error al escribir fichero: " + e.getMessage());
         }
     }
 }

@@ -8,13 +8,15 @@ import java.util.Collection;
 public interface ICola<E> extends Collection<E> {
     /**
      * Encola un item
+     *
      * @param item item a encolar
      */
-    public void encolar(E item);
+    void encolar(E item);
 
     /**
      * Desencola un Item
+     *
      * @return item
      */
-    public E desencolar();
+    E desencolar();
 }
