@@ -17,7 +17,7 @@ Debes tener en cuenta que se puede hacer de diferente manera y algunas cosas est
 * TDA
 * Clases POJO
 * Programación Funcional y Streams
-* Generación de Jars para distribución
+* Generación de fichero Jar para distribución
 * etc.
 
 ## Otros lenguajes
