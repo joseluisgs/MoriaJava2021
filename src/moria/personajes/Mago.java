@@ -4,12 +4,12 @@ import moria.objetos.Objeto;
 import moria.objetos.Vara;
 import moria.peligros.Magico;
 import moria.peligros.Peligro;
-import moria.personajes.personalidad.SoyMago;
+import moria.personajes.personalidad.Hechicero;
 import moria.utils.Utils;
 
 import java.util.Random;
 
-public final class Mago extends Personaje implements SoyMago {
+public final class Mago extends Personaje implements Hechicero {
 
     /**
      * Constructor de Mago

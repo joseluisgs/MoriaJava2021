@@ -3,7 +3,7 @@ package moria.personajes.personalidad;
 /**
  * Interfaz de Personalidad de Mago
  */
-public interface SoyMago {
+public interface Hechicero {
     /**
      * Acción de recargar la vara con energía
      *

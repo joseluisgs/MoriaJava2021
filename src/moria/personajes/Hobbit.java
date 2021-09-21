@@ -3,13 +3,13 @@ package moria.personajes;
 import moria.objetos.Anillo;
 import moria.objetos.Objeto;
 import moria.peligros.Peligro;
-import moria.personajes.personalidad.SoyHobbit;
+import moria.personajes.personalidad.Portador;
 import moria.utils.Utils;
 
 /**
  * Clase de Personaje Hobbit
  */
-public final class Hobbit extends Personaje implements SoyHobbit {
+public final class Hobbit extends Personaje implements Portador {
 
     /**
      * Constructor de Hobbit
@@ -77,7 +77,7 @@ public final class Hobbit extends Personaje implements SoyHobbit {
         // Tomamos una decisión al 50%
         boolean decision = this.decidir();
         if (decision) {
-            System.out.println("--> " + this.getNombre() + " decide no ponerse el anillo");
+            System.out.println("--> " + this.getNombre() + " decide sí ponerse el anillo");
             this.ponerseAnillo();
             // Lo superamos el 90%
             return this.superarPeligroHabilidad(90);

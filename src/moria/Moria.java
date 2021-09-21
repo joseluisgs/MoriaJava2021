@@ -137,8 +137,7 @@ public final class Moria {
      * Mensajes de presentación y entradas en el fichero de historias de ejecución
      */
     private void presentacion() {
-        LocalDateTime dateTime = LocalDateTime.now();
-        String momento = dateTime.format(DateTimeFormatter.ofPattern("dd/M/y H:m:ss"));
+        String momento = Utils.getMomentoActual();
         String mensaje = "*** ABRIENDO LAS PUERTAS DE MORIA ***";
         System.out.println(mensaje);
         System.out.println();
@@ -186,8 +185,7 @@ public final class Moria {
      * Informe final en pantalla y en el fichero de historias de ejecución
      */
     private void informe() {
-        LocalDateTime dateTime = LocalDateTime.now();
-        String momento = dateTime.format(DateTimeFormatter.ofPattern("dd/M/y H:m:ss"));
+        String momento = Utils.getMomentoActual();
         String mensaje = "--------------";
         System.out.println(mensaje);
         if (this.estado == this.VIVOS) {
@@ -201,6 +199,7 @@ public final class Moria {
         System.out.println(mensaje);
         añadirInforme(mensaje + " -> " + momento + "\n\n");
     }
+
 
 
     /**

@@ -1,9 +1,9 @@
 package moria.personajes.personalidad;
 
 /**
- * Interfaz de Personalidad de Elfo
+ * Interfaz de Personalidad de Arquero
  */
-public interface SoyElfo {
+public interface Arquero {
     /**
      * Lanza una flecha
      */

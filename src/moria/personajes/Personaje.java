@@ -16,7 +16,7 @@ public abstract class Personaje {
     /**
      * Constructor de Personaje
      *
-     * @param nombre   nombre de persojae
+     * @param nombre   nombre de personaje
      * @param vivo     true/false vivo/muerto
      * @param objeto   objeto que porta
      * @param probHuir probabilidad de huir

@@ -1,9 +1,9 @@
 package moria.personajes.personalidad;
 
 /**
- * Interfaz de Personalidad de Hobbit
+ * Interfaz de Personalidad de Portador de Anillo
  */
-public interface SoyHobbit {
+public interface Portador {
     /**
      * Acción de ponerse el Anillo
      */

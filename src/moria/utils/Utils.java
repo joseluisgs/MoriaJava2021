@@ -5,6 +5,8 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Random;
 
 /**
@@ -42,4 +44,10 @@ public class Utils {
             System.err.println("Error al escribir fichero: " + e.getMessage());
         }
     }
+
+    public static String getMomentoActual() {
+        LocalDateTime dateTime = LocalDateTime.now();
+        return dateTime.format(DateTimeFormatter.ofPattern("dd/M/y H:m:ss"));
+    }
+
 }

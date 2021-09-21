@@ -4,12 +4,12 @@ import moria.objetos.Carcaj;
 import moria.objetos.Objeto;
 import moria.peligros.Accion;
 import moria.peligros.Peligro;
-import moria.personajes.personalidad.SoyElfo;
+import moria.personajes.personalidad.Arquero;
 
 /**
  * Clase de Personaje Elfo
  */
-public final class Elfo extends Personaje implements SoyElfo {
+public final class Elfo extends Personaje implements Arquero {
 
     /**
      * Constructor de Elfo
